@@ -13,3 +13,10 @@ xhr.onerror = function() {
 };
  
 xhr.send();
+
+const token = '128b5610a5677c664cfa4844674e85a0bad04c86'
+fetch('https://api.github.com/user/repos', {
+  headers: {
+    Authorization: `token ${token}`
+  }
+}).then(res => res.json()).then(json => console.log(json));
